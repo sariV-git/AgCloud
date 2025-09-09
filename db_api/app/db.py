@@ -1,3 +1,4 @@
+
 from dotenv import load_dotenv
 load_dotenv()  
 
@@ -21,3 +22,4 @@ def session_scope():
         raise
     finally:
         s.close()
+

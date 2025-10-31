@@ -1,28 +1,28 @@
 FROM python:3.12-slim
-
 WORKDIR /app
 
-# Install build essentials and curl (minimal base)
+# Install basic packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential curl ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
+        ca-certificates curl \
+    && rm -rf /var/lib/apt/lists/*
 
-# Environment variables
+# Set environment variables
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-# Upgrade pip and install certifi (ensures latest root CAs)
-RUN python -m pip install --no-cache-dir --upgrade pip certifi
+# Upgrade pip
+RUN python -m pip install --no-cache-dir --upgrade pip
 
-# Install dependencies
+# Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy the app source
 COPY app ./app
 
-EXPOSE 8080
+# Expose the API port
+EXPOSE 8001
 
-# Run FastAPI app with uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+# Run FastAPI app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]

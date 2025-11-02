@@ -16,13 +16,15 @@ ENV SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-RUN python -m pip install --no-cache-dir --upgrade pip certifi
+# RUN python -m pip install --no-cache-dir --upgrade pip certifi
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir \
+  --trusted-host pypi.org --trusted-host files.pythonhosted.org \
+  -r requirements.txt
 
 COPY app ./app
 
-EXPOSE 8080
+EXPOSE 8001
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001"]

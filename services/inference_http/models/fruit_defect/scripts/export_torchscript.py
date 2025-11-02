@@ -15,7 +15,6 @@ m.eval()
 
 example = torch.randn(1, 3, img_size, img_size)
 with torch.inference_mode():
-    # trace "עדין": בלי freeze/optimize_for_inference כדי להימנע מהבאג בטעינה
     ts = torch.jit.trace(m, example, strict=False)
 
 out = Path("outputs/fruit_cls_best.ts")

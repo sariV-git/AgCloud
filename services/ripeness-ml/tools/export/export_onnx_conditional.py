@@ -1,5 +1,5 @@
 import torch, yaml, os
-from models.mobilenet_v3_large_head import build_conditional
+from model.architecture.mobilenet_v3_large_head import build_conditional
 
 if __name__ == "__main__":
     cfg = yaml.safe_load(open("configs/config.yaml"))

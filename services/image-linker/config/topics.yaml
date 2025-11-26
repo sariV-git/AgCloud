@@ -18,6 +18,11 @@ teams:
     minio_topic: sound.new.plants
     output_topic: sound_new_plants_connections
 
+  security_rover:
+    metadata_topic: security_rover_images_metadata      
+    minio_topic: image.new.security          
+    output_topic: imagery.new.rover          
+
   # fruits:
   #   metadata: dev-fruits-images-keys
   #   minio: image.new.fruits

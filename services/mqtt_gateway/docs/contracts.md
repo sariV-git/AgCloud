@@ -7,7 +7,7 @@
 `garage_cam_01_20251027_121530.jpg`
 
 ## Kafka topic (value JSON published to this topic)
-`rover.images.meta.v1`
+`dev-security-images-keys`
 
 ## Kafka message (value)
 ```json

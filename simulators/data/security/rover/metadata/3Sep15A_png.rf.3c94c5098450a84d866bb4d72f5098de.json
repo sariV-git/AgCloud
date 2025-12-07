@@ -1,0 +1,14 @@
+{
+  "device_id": "camera-01",
+  "camera_id": "cam-west-02",
+  "capture_time": "2025-11-23T10:28:20Z",
+  "file_name": "3Sep15A_png.rf.3c94c5098450a84d866bb4d72f5098de.jpg",
+  "sample_rate_hz": null,
+  "content_type": "image/jpeg",
+  "gis_origin": {
+    "lat": 32.061,
+    "lon": 34.772,
+    "heading": 182.4,
+    "speed_mps": 2.1
+  }
+}

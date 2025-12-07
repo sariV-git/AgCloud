@@ -1,0 +1,11 @@
+numpy
+librosa
+soundfile
+tensorflow
+psycopg2-binary
+requests
+urllib3
+pytz
+minio
+keras
+kafka-python

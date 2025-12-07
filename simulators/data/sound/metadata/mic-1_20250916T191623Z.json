@@ -1,0 +1,14 @@
+{
+  "file_name": "mic-1_20250916T191623Z.wav",
+  "device_id": "mic-1",
+  "capture_time": "2025-09-16T19:16:23Z",
+  "duration_sec": 5.0,
+  "done": false,
+  "sample_rate_hz": 16000,
+  "channels": 1,
+  "content_type": "audio/wav",
+  "gis_origin": {
+    "latitude": 31.89561,
+    "longitude": 34.8459
+  }
+}
